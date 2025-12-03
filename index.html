@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>The Calculator</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    </head>
+
+    <body>
+        <div class="app">
+            <div class="panel" id="calc-panel" role="application" aria-label="Calculator">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="tabs" role="tablist" aria-label="Modes">
+                        <div class="tab active" data-mode="standard">Standard</div>
+                        <div class="tab" data-mode="scientific">Scientific</div>
+                        <div class="tab" data-mode="programmer">Programmer</div>
+                    </div>
+                </div>
+                <div class="display" aria-live="polite">
+                    <div class="history" id="display-history"></div>
+                    <div id="display-output" class="out">0</div>
+                </div>
+                <div id="keys-area" class="keys mt-3" aria-hidden="false"></div>
+                <div class="flex gap-3 mt-3">
+                    <button class="btn func" id="m-plus">M+</button>
+                    <button class="btn func" id="m-minus">M-</button>
+                    <button class="btn func" id="mr">MR</button>
+                    <button class="btn func" id="mc">MC</button>
+                    <button class="btn func" id="hist-toggle">History</button>
+                </div>
+            </div>
+            <aside class="sidebar" id="sidebar">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="muted">History</div>
+                        <div class="text-sm">Recent calculations & conversions</div>
+                    </div>
+                    <button id="clear-history" class="btn clear">Clear</button>
+                </div>
+                <div class="history-list mt-2" id="history-list" aria-live="polite"></div>
+                <hr class="my-3 border-gray-800">
+                <div class="list">
+                    <div class="muted">Programmer Tools</div>
+                    <div class="flex gap-2 items-center">
+                        <label class="muted">Base:</label>
+                        <select id="base-select" class="btn func" style="padding:8px 10px; min-width:110px">
+                            <option value="10">DEC</option>
+                            <option value="16">HEX</option>
+                            <option value="8">OCT</option>
+                            <option value="2">BIN</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <button class="btn func" id="to-binary">To Binary</button>
+                        <button class="btn func" id="to-hex">To Hex</button>
+                        <button class="btn func" id="to-oct">To Oct</button>
+                    </div>
+                    <div class="muted mt-3">Bitwise</div>
+                    <div class="flex gap-2 mt-2">
+                        <button class="btn func" id="op-and">&amp;</button>
+                        <button class="btn func" id="op-or">|</button>
+                        <button class="btn func" id="op-xor">^</button>
+                        <button class="btn func" id="op-shl">&lt;&lt;</button>
+                        <button class="btn func" id="op-shr">&gt;&gt;</button>
+                    </div>
+                </div>
+                <hr class="my-3 border-gray-800">
+                <div>
+                    <div class="muted">Memory</div>
+                    <div id="mem-status" class="text-sm">M = 0</div>
+                </div>
+            </aside>
+        </div>
+    </body>
+
+</html>
