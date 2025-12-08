@@ -147,6 +147,7 @@ body {
 .func {
     background: linear-gradient(180deg, #14161b, #0f1114);
     color: var(--muted);
+    
 }
 
 .operator {
